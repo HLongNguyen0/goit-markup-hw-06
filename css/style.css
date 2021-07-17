@@ -42,9 +42,13 @@ fieldset {
   padding: 0;
   border: none;
 }
+input {
+  margin: 0;
+  padding: 0;
+}
 /* global */
 .container {
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -614,6 +618,11 @@ footer ul {
   height: 30px;
   border-radius: 50%;
   border: 1px solid #0000001a;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop-close-button-container:hover,
+.backdrop-close-button-container:focus {
+  fill: var(--blueish);
 }
 .backdrop-close-button {
   width: 11px;
@@ -668,17 +677,24 @@ footer ul {
   border-color: var(--blueish);
   outline: none;
 }
-.backdrop-icons {
+.user-icon {
+  width: 12px;
+  height: 12px;
+}
+.backdrop-icon-container {
   position: absolute;
   top: 50%;
   left: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transform: translateY(-50%);
-  width: 12px;
-  height: 12px;
+  width: 18px;
+  height: 18px;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.backdrop-user-info input:hover + .backdrop-icons,
-.backdrop-user-info input:focus + .backdrop-icons {
+.backdrop-user-info input:hover + .backdrop-icon-container,
+.backdrop-user-info input:focus + .backdrop-icon-container {
   fill: var(--blueish);
 }
 .backdrop-user-info textarea {
