@@ -377,16 +377,78 @@
             </a>
           </div>
         </div>
+        <div class="footer-email">
+          <p>Подпишитесь на рассылку</p>
+          <form>
+            <input type="email" name="contact-email" placeholder="E-mail" />
+            <button type="submit">
+              <p>Подписаться</p>
+              <svg class="footer-email-icon-send">
+                <use href="./img/spite.svg#icon-icon-send"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
       </div>
     </footer>
     <!-- Backdrop -->
     <div class="backdrop is-hidden" data-modal>
       <div class="backdrop-content">
-        <button class="backdrop-close-button" data-modal-close>
-          <svg class="close-button">
+        <button class="backdrop-close-button-container" data-modal-close>
+          <svg class="backdrop-close-button">
             <use href="./img/spite.svg#icon-Vector"></use>
           </svg>
         </button>
+        <p>Оставьте свои данные, мы вам перезвоним</p>
+        <form class="backdrop-form">
+          <fieldset class="backdrop-user-info">
+            <label>
+              <span>Имя</span>
+              <span class="backdrop-input-container">
+                <input class="form-name" type="text" name="name" required />
+                <svg class="backdrop-icons">
+                  <use href="./img/spite.svg#icon-user-backdrop"></use>
+                </svg>
+              </span>
+            </label>
+            <label>
+              <span>Телефон</span>
+              <span class="backdrop-input-container">
+                <input class="form-tel" type="tel" name="tel" required />
+                <svg class="backdrop-icons">
+                  <use href="./img/spite.svg#icon-phone-backdrop"></use>
+                </svg>
+              </span>
+            </label>
+            <label>
+              <span>Почта</span>
+              <span class="backdrop-input-container">
+                <input class="form-email" type="email" name="email" />
+                <svg class="backdrop-icons">
+                  <use href="./img/spite.svg#icon-email-backdrop"></use>
+                </svg>
+              </span>
+            </label>
+            <label>
+              <span>Комментарий</span>
+              <textarea name="textarea" placeholder="Введите текст"></textarea>
+            </label>
+          </fieldset>
+          <fieldset class="backdrop-checkbox-container">
+            <input
+              type="checkbox"
+              name="backdrop-checkbox"
+              id="checkbox"
+              value="checked"
+              required
+            />
+            <label class="backdrop-checkbox-label" for="checkbox">
+              Соглашаюсь с рассылкой и принимаю
+              <a href="">Условия договора</a>
+            </label>
+          </fieldset>
+          <button type="submit">Отправить</button>
+        </form>
       </div>
     </div>
     <!-- js link -->

@@ -17,6 +17,8 @@ a {
   cursor: pointer;
 }
 button {
+  padding: 0;
+  border: none;
   cursor: pointer;
 }
 h1,
@@ -34,6 +36,11 @@ ul {
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
+}
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 /* global */
 .container {
@@ -512,6 +519,70 @@ footer ul {
 .sm-icon-container:focus {
   background-color: var(--blueish);
 }
+.footer-email {
+  margin-top: 12px;
+  margin-left: 93px;
+}
+.footer-email > p {
+  font-family: var(--main-font);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.footer-email form {
+  display: flex;
+  margin-top: 20px;
+}
+.footer-email input {
+  background: transparent;
+  margin-right: 12px;
+  padding: 15px 16px;
+  width: 358px;
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: #ffffff;
+}
+.footer-email input::placeholder {
+  font-family: var(--main-font);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+}
+.footer-email input:hover,
+.footer-email input:focus {
+  border-color: #ffffff;
+  outline: none;
+}
+.footer-email button {
+  background: #2196f3;
+  width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  font-family: var(--main-font);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.86;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+}
+.footer-email-icon-send {
+  fill: #ffffff;
+  margin-left: 10px;
+  width: 24px;
+  height: 24px;
+}
 /* backdrop */
 .backdrop {
   background: rgba(0, 0, 0, 0.2);
@@ -529,8 +600,9 @@ footer ul {
   transform: translate(-50%, -50%);
   width: 528px;
   height: 581px;
+  padding: 40px;
 }
-.backdrop-close-button {
+.backdrop-close-button-container {
   background-color: #ffffff;
   display: flex;
   justify-content: center;
@@ -543,9 +615,152 @@ footer ul {
   border-radius: 50%;
   border: 1px solid #0000001a;
 }
-.close-button {
+.backdrop-close-button {
   width: 11px;
   height: 11px;
+}
+.backdrop-content p {
+  margin-bottom: 12px;
+  font-family: var(--main-font);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #212121;
+}
+.backdrop-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.backdrop-user-info {
+  width: 100%;
+}
+.backdrop-user-info label {
+  width: 100%;
+  height: 40px;
+  font-family: var(--main-font);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: #757575;
+}
+.backdrop-input-container {
+  display: block;
+  position: relative;
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+.backdrop-user-info input {
+  width: 100%;
+  height: 40px;
+  padding: 12px 16px 12px 42px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop-user-info input:hover,
+.backdrop-user-info input:focus,
+.backdrop-user-info textarea:hover,
+.backdrop-user-info textarea:focus {
+  border-color: var(--blueish);
+  outline: none;
+}
+.backdrop-icons {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop-user-info input:hover + .backdrop-icons,
+.backdrop-user-info input:focus + .backdrop-icons {
+  fill: var(--blueish);
+}
+.backdrop-user-info textarea {
+  width: 100%;
+  height: 120px;
+  margin-top: 4px;
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  resize: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop-user-info textarea::placeholder {
+  padding-top: 6px;
+  font-family: var(--main-font);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14px;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+.backdrop-checkbox-container {
+  position: relative;
+  margin-bottom: 30px;
+}
+#checkbox {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+#checkbox:focus + .backdrop-checkbox-label::before {
+  background-image: none;
+  border: 2px solid var(--blueish);
+  border-radius: 1px;
+}
+#checkbox:checked + .backdrop-checkbox-label::before {
+  background-image: url(../img/checkbox-backdrop.svg);
+  background-position: center;
+  object-fit: cover;
+  border: none;
+}
+.backdrop-checkbox-label::before {
+  background-image: url(../img/border-backdrop.svg);
+  display: inline-block;
+  margin-right: 8.4px;
+  content: '';
+  width: 16px;
+  height: 15px;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop-checkbox-label {
+  font-family: var(--main-font);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: #757575;
+}
+.backdrop-checkbox-label a {
+  text-decoration-line: underline;
+  color: var(--blueish);
+}
+.backdrop-form button {
+  width: 200px;
+  height: 50px;
+  background: #2196f3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  font-family: var(--main-font);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  color: #ffffff;
 }
 .is-hidden {
   visibility: hidden;
