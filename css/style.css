@@ -603,7 +603,6 @@ footer ul {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 528px;
-  height: 581px;
   padding: 40px;
 }
 .backdrop-close-button-container {
@@ -636,92 +635,118 @@ footer ul {
   line-height: 1.15;
   text-align: center;
   letter-spacing: 0.03em;
-  color: #212121;
+  color: var(--blackish);
 }
 .backdrop-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.backdrop-user-info {
   width: 100%;
+}
+.backdrop-user-container {
   margin-bottom: 20px;
 }
-.backdrop-user-info label {
-  width: 100%;
-  height: 40px;
+.backdrop-user-info-container {
+  position: relative;
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+.backdrop-user-info-container:hover .backdrop-user-info-input {
+  border-color: var(--blueish);
+}
+.backdrop-user-info-container:hover .backdrop-user-icon {
+  fill: var(--blueish);
+}
+.backdrop-user-info-input:focus {
+  border-color: var(--blueish);
+  outline: none;
+}
+.backdrop-user-info-input:focus + .backdrop-user-icon {
+  fill: var(--blueish);
+}
+.backdrop-user-info {
+  display: block;
+  width: max-content;
   font-family: var(--main-font);
   font-weight: 400;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
-  color: #757575;
+  color: var(--greyish);
 }
-.backdrop-input-container {
-  display: block;
+.backdrop-user-info-input {
   position: relative;
-  margin-top: 4px;
-  margin-bottom: 10px;
-}
-.backdrop-user-info input {
   width: 100%;
   height: 40px;
-  padding: 12px 16px 12px 42px;
+  padding: 12px;
+  padding-left: 42px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.backdrop-user-info input:hover,
-.backdrop-user-info input:focus,
-.backdrop-user-info textarea:hover,
-.backdrop-user-info textarea:focus {
-  border-color: var(--blueish);
-  outline: none;
-}
-.user-icon {
-  width: 12px;
-  height: 12px;
-}
-.backdrop-icon-container {
+.backdrop-user-icon {
   position: absolute;
   top: 50%;
   left: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translateY(-50%);
   width: 18px;
   height: 18px;
+  transform: translateY(-50%);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.backdrop-user-info input:hover + .backdrop-icon-container,
-.backdrop-user-info input:focus + .backdrop-icon-container {
-  fill: var(--blueish);
+.backdrop-user-comment {
+  display: block;
+  width: max-content;
+  font-family: var(--main-font);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: var(--greyish);
 }
-.backdrop-user-info textarea {
+.backdrop-user-comment-textarea {
   width: 100%;
   height: 120px;
   margin-top: 4px;
   padding: 12px 16px;
-  resize: none;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  resize: none;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.backdrop-user-info textarea::placeholder {
-  padding-top: 6px;
+.backdrop-user-comment-textarea:hover,
+.backdrop-user-comment-textarea:focus {
+  border-color: var(--blueish);
+  outline: none;
+}
+.backdrop-checkbox-container {
+  margin: 0 auto 30px;
+  width: max-content;
+}
+.backdrop-checkbox-label {
   font-family: var(--main-font);
   font-weight: 400;
   font-size: 14px;
-  line-height: 1.14px;
-  letter-spacing: 0.01em;
-  color: rgba(117, 117, 117, 0.5);
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--greyish);
 }
-.backdrop-checkbox-container {
-  position: relative;
-  margin-bottom: 30px;
+.backdrop-checkbox-label::before {
+  content: '';
+  background-image: url('../img/backdrop-checkbox-border.svg');
+  margin-right: 8.4px;
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  vertical-align: middle;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-#checkbox {
+.backdrop-checkbox-label a {
+  font-family: var(--main-font);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  text-decoration-line: underline;
+  color: #2196f3;
+}
+.backdrop-checkbox {
   position: absolute;
   white-space: nowrap;
   width: 1px;
@@ -733,42 +758,19 @@ footer ul {
   clip-path: inset(50%);
   margin: -1px;
 }
-#checkbox:focus + .backdrop-checkbox-label::before {
-  background-image: none;
-  border: 2px solid var(--blueish);
-  border-radius: 1px;
+.backdrop-checkbox:hover + .backdrop-checkbox-label::before,
+.backdrop-checkbox:focus + .backdrop-checkbox-label::before {
+  background-image: url('../img/backdrop-checkbox-border-focus.svg');
 }
-#checkbox:checked + .backdrop-checkbox-label::before {
-  background-image: url(../img/checkbox-backdrop.svg);
-  background-position: center;
-  object-fit: cover;
-  border: none;
+.backdrop-checkbox:checked + .backdrop-checkbox-label::before {
+  background-image: url('../img/backdrop-checkbox.svg');
 }
-.backdrop-checkbox-label::before {
-  background-image: url(../img/border-backdrop.svg);
-  display: inline-block;
-  margin-right: 8.4px;
-  content: '';
-  width: 16px;
-  height: 15px;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.backdrop-checkbox-label {
-  font-family: var(--main-font);
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
-  letter-spacing: 0.03em;
-  color: #757575;
-}
-.backdrop-checkbox-label a {
-  text-decoration-line: underline;
-  color: var(--blueish);
-}
-.backdrop-form button {
+.backdrop-submit-button {
+  background: #2196f3;
+  display: block;
+  margin: auto;
   width: 200px;
   height: 50px;
-  background: #2196f3;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   font-family: var(--main-font);

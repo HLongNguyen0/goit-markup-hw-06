@@ -392,7 +392,8 @@
       </div>
     </footer>
     <!-- Backdrop -->
-    <div class="backdrop is-hidden" data-modal>
+    <div class="backdrop" data-modal>
+      <!-- is-hidden -->
       <div class="backdrop-content">
         <button class="backdrop-close-button-container" data-modal-close>
           <svg class="backdrop-close-button">
@@ -401,59 +402,74 @@
         </button>
         <p>Оставьте свои данные, мы вам перезвоним</p>
         <form class="backdrop-form">
-          <fieldset class="backdrop-user-info">
-            <label>
+          <div class="backdrop-user-container">
+            <label for="user-names" class="backdrop-user-info">
               <span>Имя</span>
-              <span class="backdrop-input-container">
-                <input class="form-name" type="text" name="name" required />
-                <div class="backdrop-icon-container">
-                  <svg class="backdrop-icons user-icon">
-                    <use href="./img/spite.svg#icon-user-backdrop"></use>
-                  </svg>
-                </div>
-              </span>
             </label>
-            <label>
+            <div class="backdrop-user-info-container">
+              <input
+                type="text"
+                class="backdrop-user-info-input"
+                id="user-names"
+                name="user-names"
+                required
+              />
+              <svg class="backdrop-user-icon">
+                <use href="./img/spite.svg#icon-user-backdrop"></use>
+              </svg>
+            </div>
+            <label for="user-phone" class="backdrop-user-info">
               <span>Телефон</span>
-              <span class="backdrop-input-container">
-                <input class="form-tel" type="tel" name="tel" required />
-                <div class="backdrop-icon-container">
-                  <svg class="backdrop-icons">
-                    <use href="./img/spite.svg#icon-phone-backdrop"></use>
-                  </svg>
-                </div>
-              </span>
             </label>
-            <label>
+            <div class="backdrop-user-info-container">
+              <input
+                type="phone"
+                class="backdrop-user-info-input"
+                id="user-phone"
+                name="user-tel"
+                required
+              />
+              <svg class="backdrop-user-icon">
+                <use href="./img/spite.svg#icon-phone-backdrop"></use>
+              </svg>
+            </div>
+            <label for="user-email" class="backdrop-user-info">
               <span>Почта</span>
-              <span class="backdrop-input-container">
-                <input class="form-email" type="email" name="email" />
-                <div class="backdrop-icon-container">
-                  <svg class="backdrop-icons">
-                    <use href="./img/spite.svg#icon-email-backdrop"></use>
-                  </svg>
-                </div>
-              </span>
             </label>
-            <label>
-              <span>Комментарий</span>
-              <textarea name="textarea" placeholder="Введите текст"></textarea>
-            </label>
-          </fieldset>
-          <fieldset class="backdrop-checkbox-container">
+            <div class="backdrop-user-info-container">
+              <input
+                type="email"
+                class="backdrop-user-info-input"
+                id="user-email"
+                name="user-email"
+                required
+              />
+              <svg class="backdrop-user-icon">
+                <use href="./img/spite.svg#icon-email-backdrop"></use>
+              </svg>
+            </div>
+            <label for="user-comment" class="backdrop-user-comment"> Комментарий </label>
+            <textarea
+              class="backdrop-user-comment-textarea"
+              id="user-comment"
+              name="user-comment"
+              placeholder="Введите текст"
+            ></textarea>
+          </div>
+          <div class="backdrop-checkbox-container">
             <input
               type="checkbox"
+              class="backdrop-checkbox"
               name="backdrop-checkbox"
-              id="checkbox"
-              value="checked"
+              id="backdrop-checkbox"
               required
             />
-            <label class="backdrop-checkbox-label" for="checkbox">
-              Соглашаюсь с рассылкой и принимаю
+            <label for="backdrop-checkbox" class="backdrop-checkbox-label"
+              >Соглашаюсь с рассылкой и принимаю
               <a href="">Условия договора</a>
             </label>
-          </fieldset>
-          <button type="submit">Отправить</button>
+          </div>
+          <button type="submit" class="backdrop-submit-button">Отправить</button>
         </form>
       </div>
     </div>
